@@ -1,4 +1,4 @@
-class Solution(object): #给定一个所有元素都不同的list，要求返回list元素的全排列。 #rtlist用来存储所有的返回所有排列，templist用来生成每个排列
+class Huisu(object): #rtlist存储所有返回的所有排列，templist用来生成每个排列
     def backtrack(self,rtlist,templist,nums):
         if(len(templist) == len(nums)):
             temp = templist[:6]
@@ -7,7 +7,7 @@ class Solution(object): #给定一个所有元素都不同的list，要求返回
                     rtlist.append(temp)
         else:
             for i in nums:
-                if(i in templist): #如果在当前排列中已经有i了，就continue，相当于分支限界，即不对当前节点子树搜寻了
+                if(i in templist): #如果在当前排列中已有i则continue
                     continue
                 templist.append(i)
                 self.backtrack(rtlist,templist,nums)
